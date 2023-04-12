@@ -6,14 +6,15 @@ pipeline {
 		REPO_NAME = 'gcprepo'
 		BRANCH_NAME = 'master'
 	}
-	<dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>credentials</artifactId>
-</dependency>
+	
 	
 	stages {
 		stage("Git Checkout") {
 			steps {
+				<dependency>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>credentials</artifactId>
+</dependency>
 				git credentialsId: 'e03419c4-f9f4-4d27-b7d7-1ff81227e501', url: 'https://github.com/sowmya1597/gcprepo'
 			}
 		}
