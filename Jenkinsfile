@@ -20,7 +20,6 @@ pipeline{
         
          stage("deploy"){
             steps{
-                  deploy adapters: [credentialsId: 'b7278b53-701c-439d-87a9-d419d396b8b8', path: '', url: 'https://github.com/sowmya1597/gcprepo.git']
-        }
-    }
+                  deploy adapters: git credentialsId: 'b7278b53-701c-439d-87a9-d419d396b8b8', url: 'https://github.com/sowmya1597/gcprepo.git'
+            }
 }
