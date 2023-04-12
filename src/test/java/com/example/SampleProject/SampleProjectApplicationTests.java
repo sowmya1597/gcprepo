@@ -8,7 +8,7 @@ class SampleProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
-		git branch: 'dev', url: 'https://github.com/sowmya1597/sowmi.git'
+		
 	}
 
 }
