@@ -18,7 +18,7 @@ pipeline{
         }
              stage("deploy"){
             steps{
-                  deploy adapters: credentialsId: '9d8b480d-8752-4e32-b5e7-9ce5fb4e48b0', path: '', url: 'http://34.135.82.198:8080/'
+                  deploy adapters: (credentialsId: '9d8b480d-8752-4e32-b5e7-9ce5fb4e48b0', path: '', url: 'http://34.135.82.198:8080/')
                                        
         }
         
