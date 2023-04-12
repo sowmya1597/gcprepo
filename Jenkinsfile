@@ -13,7 +13,7 @@ pipeline {
 				git credentialsId: 'b3949e7f-926c-49b5-af29-788f4e64ba05', url: 'https://github.com/sowmya1597/gcprepo.git'
 			}
 		}
-		stage( 'Build') {
+		stage('Build') {
 				steps {
 					// Authenticate with Google Cloud using a service account key file
 					withCredentials([credentials('GCPExamples')]) {
