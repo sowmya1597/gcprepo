@@ -10,5 +10,10 @@ class SampleProjectApplicationTests {
 	void contextLoads() {
 		
 	}
+	stage("Maven Build"){
+           steps{
+                sh "mvn clean package"
+               
+            }
 
 }
