@@ -6,6 +6,10 @@ pipeline {
 		REPO_NAME = 'gcprepo'
 		BRANCH_NAME = 'master'
 	}
+	<dependency>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>credentials</artifactId>
+</dependency>
 	
 	stages {
 		stage("Git Checkout") {
