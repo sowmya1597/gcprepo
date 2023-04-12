@@ -13,12 +13,12 @@ pipeline{
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-                 sh "mv target/*.war target/myweb.war"
+                
             }
         }
              stage("deploy"){
             steps{
-                  deploy adapters: [tomcat9(git credentialsId: 'b7278b53-701c-439d-87a9-d419d396b8b8', path: '', url: 'http://34.93.6.195/')], contextPath: 'webapps', war: 'target/*.war'
+                  deploy adapters: (git credentialsId: 'b7278b53-701c-439d-87a9-d419d396b8b8', path: '', url: 'http://34.93.6.195:8080/')
                                        
                  }
         }
