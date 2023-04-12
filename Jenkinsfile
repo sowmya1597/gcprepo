@@ -15,17 +15,6 @@ pipeline {
 				git credentialsId: 'e03419c4-f9f4-4d27-b7d7-1ff81227e501', url: 'https://github.com/sowmya1597/gcprepo'
 			}
 		}
-		stage('Build') {
-				steps {
-					// Authenticate with Google Cloud using a service account key file
-					withCredentials([credentials('GCPExamples')]) {
-          				sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-        				}
-
-					// Trigger the Cloud Build
-					sh "gcloud builds submit --project=${PROJECT_ID} --config=path/to/cloudbuild.yaml --substitutions=_TAG=${env.BUILD_NUMBER}"
-				}
-			}
 		stage('Create build trigger') {
 			steps {
 				script {
