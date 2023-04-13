@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		PATH = "/opt/maven3/bin:$PATH"
-		export PATH="/path/to/google-cloud-sdk/bin:$PATH" to . bashrc.
+		PATH = ./google-cloud-sdk/install.sh
 		PROJECT_ID = 'gcpexamples-383504'
 		REPO_NAME = 'gcprepo'
 		BRANCH_NAME = 'master'
