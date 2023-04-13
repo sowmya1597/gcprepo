@@ -38,7 +38,7 @@ pipeline {
 								REPO_NAME: REPO_NAME
 							]
 							filename: 'cloudbuild.yaml'
-						],
+						]
 						gitHub: [
 							owner: 'your-github-owner',
 							name: REPO_NAME
