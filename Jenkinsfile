@@ -18,6 +18,7 @@ pipeline {
 		stage('Build') {
 				steps {
 					// Authenticate with Google Cloud using a service account key file
+					googleCloudBuild credentialsId: 'GCPExamples ', request: file('Jenkinsfile')
 					withCredentials([credentials('GCPExamples')]) {
           				sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
         				}
