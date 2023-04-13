@@ -12,7 +12,7 @@ pipeline {
 		  stage("Git Checkout"){
             steps{
                
-		    git credentialsId: 'e03419c4-f9f4-4d27-b7d7-1ff81227e501',branch: 'master', url: 'https://github.com/sowmya1597/gcprepo'
+		   git credentialsId: '2452a609-4976-4af4-a8e9-fa7df544c8ec', url: 'https://github.com/sowmya1597/gcprepo/'
             }
 		}
 		stage('Create Cloud Build') {
