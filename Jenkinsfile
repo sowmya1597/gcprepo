@@ -7,7 +7,6 @@ pipeline {
 		BRANCH_NAME = 'master'
 	}
 	
-	
 	stages {
 		stage("Git Checkout") {
 			steps {
@@ -50,7 +49,6 @@ pipeline {
 				}
 			}
 		}
-
 		stage('Trigger build') {
 			steps {
 				script {
