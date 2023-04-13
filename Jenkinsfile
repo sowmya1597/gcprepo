@@ -12,13 +12,13 @@ pipeline {
 		stage("Git Checkout") {
 			steps {
 				
-				git credentialsId: 'e03419c4-f9f4-4d27-b7d7-1ff81227e501', url: 'https://github.com/sowmya1597/gcprepo'
+				googleCloudBuild credentialsId: 'GCPExamples ', request: file('Jenkinsfile')
 			}
 		}
 		stage('Build') {
 				steps {
 					// Authenticate with Google Cloud using a service account key file
-					googleCloudBuild credentialsId: 'GCPExamples ', request: file('Jenkinsfile')
+					
 					withCredentials([credentials('GCPExamples')]) {
           				sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
         				}
