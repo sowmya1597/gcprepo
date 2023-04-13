@@ -19,7 +19,7 @@ pipeline {
 		
 		stage('deployment stage') {
                   steps {
-                    maven(maven : 'Maven_3.5.2'){
+                    maven(maven : 'Maven_3'){
                         bat "mvn deploy"
                 }
             }
