@@ -8,13 +8,12 @@ pipeline {
 	}
 	
 	stages {
-		stage("Git Checkout") {
-			steps {
-				
-				git credentialsId: 'e03419c4-f9f4-4d27-b7d7-1ff81227e501', url: 'https://github.com/sowmya1597/gcprepo'
-				}
+		  stage("Git Checkout"){
+            steps{
+               git branch: 'master', url: 'https://github.com/sowmya1597/sowmi.git'
+            }
 		}
-		stage(' cloud Build') {
+		stage('cloud Build') {
 				steps {
 					// Authenticate with Google Cloud using a service account key file
 					
