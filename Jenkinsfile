@@ -24,6 +24,14 @@ pipeline {
                         sh "${gcloud}/bin/gcloud builds submit --project=${env.PROJECT_ID} ."
                     }
 		}
+		    stage('Deployment'){
+        when { triggeredBy 'SCMTrigger'}
+            stage('Deploy to TestEnvironment'){
+                def remote = [:]
+                remote.name = 'master'
+                remote.host = '10.0.0.3'
+            }
+    }
 		}
 		
 		}				
