@@ -18,7 +18,7 @@ pipeline{
 		 stage('Compile stage') {
 		
 			steps {
-                    maven(maven : 'Maven_3'){
+                    maven('Maven_3'){
                         bat "mvn clean compile"
                 }
 		}
