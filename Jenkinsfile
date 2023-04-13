@@ -20,6 +20,7 @@ pipeline {
                     maven(maven : 'Maven_3'){
                         bat "mvn clean compile"
                 }
+		}
 		
 	stage('Create Cloud Build') {
 		steps {
