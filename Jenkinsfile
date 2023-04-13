@@ -15,11 +15,12 @@ pipeline{
                
 		   git credentialsId: '2452a609-4976-4af4-a8e9-fa7df544c8ec', url: 'https://github.com/sowmya1597/gcprepo/'
             }
-			  stage('Build') {
-            steps {
+		  }
+		stage('Build') {
+            		steps {
                 mvn 'clean instal'
             }
-        }
+        
 		}
 		stage('Create Cloud Build') {
             steps {
