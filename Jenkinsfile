@@ -21,18 +21,18 @@ pipeline{
 	    }
 		}
 		
-	stage('Create Cloud Build') {
-		steps {
-			script {
+	stage('Build') {
+      steps {
+        // Authenticate with Google Cloud using a service account key file
+        withCredentials([file(credentialsId: 'google-cloud-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+          sh 'gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}'
+        }
 
-				withCredentials([gcpServiceAccount('180856003021@cloudbuild.gserviceaccount.com')]) {
-					sh "${gcloud}/bin/gcloud auth activate-service-account ${env.GCP_SERVICE_ACCOUNT_EMAIL} --key-file=${env.GOOGLE_APPLICATION_CREDENTIALS}"
-					sh "${gcloud}/bin/gcloud builds submit --project=${env.PROJECT_ID} ."
-				}
-			}
-		}
-	}
-		
+        // Trigger the Cloud Build
+        sh "gcloud builds submit --project=${PROJECT_ID} --config=path/to/cloudbuild.yaml --substitutions=_TAG=${env.BUILD_NUMBER}"
+      }
+
+
 		}
 }
 
