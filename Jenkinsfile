@@ -17,14 +17,6 @@ pipeline {
 			}
 		}
 		
-		stage('deployment stage') {
-                  steps {
-                    maven(maven : 'Maven_3'){
-                        bat "mvn deploy"
-                }
-            }
-        
-
 	stage('Create Cloud Build') {
 		steps {
 			script {
