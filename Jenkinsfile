@@ -5,6 +5,7 @@ pipeline {
 		PROJECT_ID = 'gcpexamples-383504'
 		REPO_NAME = 'gcprepo'
 		BRANCH_NAME = 'master'
+		GCP_SERVICE_ACCOUNT_EMAIL='180856003021-compute@developer.gserviceaccount.com'
 	}
 	
 	stages {
@@ -17,9 +18,9 @@ pipeline {
             steps {
                 script {
                     def gcloud = tool 'google-cloud-sdk'
-                    withCredentials([gcpServiceAccount('gcp-creds')]) {
+                    withCredentials([gcpServiceAccount('8ebc5ce14561cd858fcf7dfcb16c088fcd7a32e7')]) {
                         sh "${gcloud}/bin/gcloud auth activate-service-account ${env.GCP_SERVICE_ACCOUNT_EMAIL} --key-file=${env.GOOGLE_APPLICATION_CREDENTIALS}"
-                        sh "${gcloud}/bin/gcloud builds submit --project=${env.GCP_PROJECT_ID} ."
+                        sh "${gcloud}/bin/gcloud builds submit --project=${env.PROJECT_ID} ."
                     }
 		}
 		}
