@@ -5,7 +5,7 @@ pipeline {
 		PROJECT_ID = 'gcpexamples-383504'
 		REPO_NAME = 'gcprepo'
 		BRANCH_NAME = 'master'
-		GCP_SERVICE_ACCOUNT_EMAIL = '180856003021-compute@developer.gserviceaccount.com'
+		GCP_SERVICE_ACCOUNT_EMAIL ='180856003021-compute@developer.gserviceaccount.com'
 	}
 
 	stages {
