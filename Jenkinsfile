@@ -24,7 +24,7 @@ pipeline{
 	stage('Build') {
       steps {
         // Authenticate with Google Cloud using a service account key file
-        withCredentials([file(credentialsId: 'google-cloud-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+        withCredentials([file(credentialsId: 'GCPExamples', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
           sh 'gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}'
         }
 
