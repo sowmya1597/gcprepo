@@ -17,14 +17,13 @@ pipeline {
 			}
 		}
 	}
-	 stage('Compile stage') {
-		steps {
-			maven(maven: 'Maven_3') {
-				bat "mvn clean compile"
-			}
-
-		}
-	}
+	stage('deployment stage') {
+                  steps {
+                    maven(maven : 'Maven_3.5.2'){
+                        bat "mvn deploy"
+                }
+            }
+        }
 
 	stage('Create Cloud Build') {
 		steps {
