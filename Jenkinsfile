@@ -9,7 +9,12 @@ pipeline{
         registry = "svvssowmya/gcprepo"
         registryCredential = 'svvssowmya/******'        
     }
-    
+    stages{
+        stage("Git Checkout"){
+            steps{
+               git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
+            }
+        }
    
        stage('Building image') {
       steps{
@@ -21,12 +26,7 @@ pipeline{
          }
       }
     }
-         stages{
-        stage("Git Checkout"){
-            steps{
-               git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
-            }
-        }
+         
        stage('Deploy Image') {
       steps {
             script {
