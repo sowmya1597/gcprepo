@@ -21,7 +21,7 @@ pipeline{
        stage('Deploy Image') {
       steps {
             script {
-                docker.withRegistry('https://gcr.io', 'gcr:306ac5da-2c44-4e67-924b-f6ca77e0d601') {
+                docker.withRegistry('https://gcr.io', 'gcr:7b54ae68-1bea-4f5e-b754-4d8bbaffcabe') {
                     dockerImage.push()
                 }
             }
