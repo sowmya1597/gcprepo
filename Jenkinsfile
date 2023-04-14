@@ -30,7 +30,7 @@ pipeline{
        stage('Deploy Image') {
       steps {
             script {
-                docker.withRegistry('https://gcr.io', 'gcr:GCPExamples') {
+                docker.withRegistry('https://gcr.io', 'svvssowmya/******') {
                     dockerImage.push()
                 }
             }
