@@ -13,7 +13,7 @@ pipeline{
     stages{
          stage("Git Checkout"){
             steps{
-               git branch: 'dev', url: 'https://github.com/sowmya1597/sowmi.git'
+               git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
             }
         }
        stage('Building image') {
