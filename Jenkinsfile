@@ -6,7 +6,7 @@ pipeline{
     }
     environment{
         
-        registry = "<dockerhub-username>/<repo-name>"
+        registry = "svvssowmya/gcprepo"
         registryCredential = '<dockerhub-credential-name>'        
     }
     
@@ -21,7 +21,7 @@ pipeline{
        stage('Deploy Image') {
       steps {
             script {
-                docker.withRegistry('https://gcr.io', 'gcr:7b54ae68-1bea-4f5e-b754-4d8bbaffcabe') {
+                docker.withRegistry('https://gcr.io', 'gcr:GCPExamples') {
                     dockerImage.push()
                 }
             }
