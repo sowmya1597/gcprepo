@@ -21,12 +21,12 @@ pipeline{
          }
       }
     }
-        
-         stage("Git Checkout"){
+         stages{
+        stage("Git Checkout"){
             steps{
                git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
             }
-        
+        }
        stage('Deploy Image') {
       steps {
             script {
