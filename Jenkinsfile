@@ -10,12 +10,7 @@ pipeline{
         registryCredential = 'svvssowmya/******'        
     }
     
-    stages{
-         stage("Git Checkout"){
-            steps{
-               git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
-            }
-        }
+   
        stage('Building image') {
       steps{
           echo "Bulding docker images"
