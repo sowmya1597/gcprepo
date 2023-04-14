@@ -11,10 +11,15 @@ pipeline{
     }
     
     stages{
+         stage("Git Checkout"){
+            steps{
+               git branch: 'dev', url: 'https://github.com/sowmya1597/sowmi.git'
+            }
+        }
        stage('Building image') {
       steps{
           echo "Bulding docker images"
-          dir('../../../Dockerfile'){
+          dir('./Dockerfile'){
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
             }
@@ -31,4 +36,5 @@ pipeline{
         }
       }
     }
+}
 }
