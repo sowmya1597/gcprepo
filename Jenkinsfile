@@ -7,7 +7,7 @@ pipeline{
     environment{
         
         registry = "svvssowmya/gcprepo"
-        registryCredential = '<dockerhub-credential-name>'        
+        registryCredential = 'svvssowmya/******'        
     }
     
     stages{
