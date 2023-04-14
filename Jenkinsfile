@@ -26,7 +26,7 @@ pipeline{
          }
       }
     }
-        stages{
+        
          stage("Git Checkout"){
             steps{
                git branch: 'master', url: 'https://github.com/sowmya1597/gcprepo.git'
@@ -44,4 +44,4 @@ pipeline{
     }
 }
     }
-}
+
